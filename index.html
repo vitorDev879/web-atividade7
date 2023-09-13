@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 7</title>
+    <script>
+        function Trocar() {
+            var texto = document.getElementById('campoA').value;
+            document.getElementById('campoB').value = texto;
+            document.getElementById('campoA').value = '';
+        }
+
+        function Tabuada() {
+            var numeroSelecionado = document.getElementById('numero').value; 
+            var divTabuada = document.getElementById('tabuada');
+            divTabuada.innerHTML = ''; 
+            
+            for ( i = 1; i <=10; i++) { 
+                var resultado = numeroSelecionado * i; 
+                var mostrar = `${numeroSelecionado} x ${i} = ${resultado}`;
+                divTabuada.innerHTML += mostrar;
+            }
+        }
+
+        function Tabuada2() {
+            var numeroSelecionado = document.getElementById('numero').value; 
+            var divTabuada = document.getElementById('tabuada');
+            
+            
+            for ( i = 1; i <=10; i++) { 
+                var resultado = numeroSelecionado * i; 
+                var mostrar = `${numeroSelecionado} x ${i} = ${resultado}`;
+                divTabuada.innerHTML += mostrar;
+            }
+        }
+    </script> 
+</head>
+<body>
+    <p>1) Crie o formulario abaixo</p>
+    <p>Ao clicar no botao, o texto do campo A é trocado com o cambo B</p>
+    <form>
+        A: <input type="text" id="campoA"> 
+            <button type="button" id="<>" onclick="Trocar()"><></button>
+        B: <input type="text" id="campoB"><br><br>
+        2) Crie o formulario abaixo:<br><br>
+        Ao clicar no botao gerar, apresentar na pagina a tabuada do numero selecionado. Utilizar laço de repetição. Ao clicar no botao novamente, a tabuada anterior deve ser apagada<br><br> 
+        Valor: <select id="numero">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        
+        <button  type="button" id="gerar" onclick="Tabuada()">Gerar</button>
+        <button  type="button" id="gerar2" onclick="Tabuada2()">Gerar salvando</button>
+        <div id="tabuada"></div>
+        
+    </form>
+    
+    
+</body>
+
+</html>
